@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <title>會員中心</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon/favicon1.png" sizes="32x32" type="image/jpg">
+  <link rel="stylesheet" href="CSS/bootstrap.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/main.css">
+  <script src="JS/all.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+    crossorigin="anonymous"></script>
+</head>
+<style>
+  * {
+
+    padding: 0;
+    bottom: 0;
+  }
+
+  body {
+    background: url("img/member\ 背景\ -\ 複製.jpg") center center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Noto Serif TC", "Noto Sans TC", "Roboto", sans-serif;
+  }
+
+
+
+  @media screen and (max-width: 1200px) {
+    body {
+      background-image: url("img/member\ 背景.jpg");
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    body {
+      background-image: url("img/中斷點的背景.jpg");
+    }
+  }
+
+
+  .banner {
+    display: block;
+    margin: auto;
+  }
+
+  .card {
+    border-radius: 40px;
+  }
+
+  #signbox {
+    margin-top: 80px;
+
+  }
+
+  p>a {
+    font-size: 5px;
+  }
+
+
+
+  #google {
+    margin: 10px 20px;
+    width: 30px;
+    height: 30px;
+  }
+</style>
+
+<body>
+
+  <object class="banner" id="cursive" data="img/19 ANTIQUE(金色字體).svg" type="image/svg+xml"></object>
+
+  <section class="vh-100">
+    <div class=" container py-5 h-100">
+      <div class="row d-flex  justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-8 col-xl-5 ">
+          <div class="card">
+            <div class="card-body text-left m-3">
+              <div>
+                <h2>登入Login</h2>
+                <p>請輸入帳號和密碼</p>
+                <div class="form  mb-4">
+                  <label for="username">Account | 會員帳號</label><br>
+                  <input id="username" type="email" name="username" class="form-control form-control-lg"
+                    placeholder="19_ANTIQUE@gmail.com">
+                </div>
+                <div class="form mt-3">
+                  <label for="password">Password | 會員密碼</label><br>
+                  <input id="password" type="text" name="password" class="form-control form-control-lg">
+                </div>
+                <p class=" mb-2 pb-lg-2"><a href="#">忘記密碼?</a></p>
+
+                <button class=" col-12  btn btn-lg px-5  my-3 d-block justify-content-between btn-outline-dark"
+                  type="submit">登入</button>
+                <button class="col-12 btn btn-lg px-5 d-block justify-content-between btn-outline-dark "
+                  type="submit">註冊</button>
+
+                <div class="d-flex justify-content-center ">
+                  <a href="#"><i class="fa-brands fa-facebook m-2 fa-2x" style="color: #4267B2;
+                    ;"></i></a>
+                  <a href="#"><img id="google" src="icon/search.png"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+</body>
+
+</html>

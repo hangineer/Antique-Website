@@ -1,0 +1,553 @@
+<!DOCTYPE html <html lang="zh-Hant">
+
+<head>
+    <title>商品說明</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon/favicon1.png" sizes="32x32" type="image/jpg">
+    <link rel="stylesheet" href="CSS/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="JS/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            color: #efe6e6;
+            font-family: "Noto Serif TC", "Noto Sans TC", sans-serif;
+            line-height: 25px;
+            position: relative;
+        }
+
+        /* 茶几跳轉 */
+        #imgs {
+            display: block;
+            margin: auto;
+        }
+
+        /* 右側欄位 */
+        .discriptionAll {
+            max-width: 660px;
+            height: auto;
+            margin-top: 130px;
+            background-color: #511f20;
+            border-radius: 10px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(238, 186, 15);
+            letter-spacing: 3px;
+        }
+
+        #star {
+            width: 150px;
+        }
+
+        .qty {
+            width: 150px;
+            height: 50px;
+            display: inline-block;
+            text-align: center;
+            background: #efe6e6;
+            margin-bottom: 5px;
+
+        }
+
+        #minus,
+        #plus {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .qty input {
+            width: 50px;
+            height: 100%;
+            border: none;
+            background: #efe6e6;
+            text-align: center;
+        }
+
+        /* 購物車 */
+        .addToCart {
+            height: 45px;
+            font-size: 15px;
+        }
+
+        /* 選擇款式 */
+        #styleList {
+            width: 22vw;
+            margin-top: 10px;
+        }
+
+
+
+        /*分享 */
+
+        #lineIcon:hover {
+            color: #00B900;
+        }
+
+        #fbIcon:hover {
+            color: #4267B2;
+        }
+
+        /* 頁籤 */
+
+        .panel-control {
+            opacity: 0;
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px 30px;
+            border: 3px solid #511f20;
+            border-bottom: none;
+            bottom: -1px;
+        }
+
+        .panel-group {
+            margin-top: 10px;
+        }
+
+        .content-group {
+            border: 3px solid #511f20;
+            padding: 20px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        #description:checked~.tab-group [for="description"],
+        #shipping:checked~.tab-group [for="shipping"] {
+            background-color: #511f20;
+        }
+
+        #description:checked~.content-group .content1,
+        #shipping:checked~.content-group .content2 {
+            display: block;
+        }
+
+
+
+        /* 運費 */
+        #shippingTable {
+            width: 80%;
+            border-collapse: collapse;
+            color: #efe6e6;
+            font-size: 20px;
+            text-align: center;
+            border-spacing: 5px;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px outset #efe6e6;
+        }
+
+        th {
+            height: 20px;
+        }
+
+        /* 商品小張圖片 */
+        .style01,
+        .style02,
+        .style03,
+        .style04,
+        .style05,
+        .style06 {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 商品大張圖片 */
+        .bigTablePic {
+            padding: 5px;
+            margin-bottom: 15px;
+        }
+
+        .bigTablePic,
+        .bigTablePic2,
+        .bigTablePic3 {
+            filter: drop-shadow(30px 30px 10px black);
+        }
+
+        /* footer */
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: fit-content;
+
+        }
+    </style>
+</head>
+
+
+
+
+<body>
+
+    <!-- navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-3" ;>
+        <a class="navbar-brand" href="19_antique.html"><img id="logo" src="LOGO/logo.png"></a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link " href="about.html" target="_blank">關於
+                    </a>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="new.html"
+                        role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">NEW IN</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">四月英國連線Part II</a>
+                        <a class="dropdown-item" href="#">三月英國連線Part I</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">家具擺飾</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">餐廚用品</a></li>
+                <li class="specialcollect nav-item">
+                    <a class="nav-link" href="#"> 獨家收藏</a>
+                    <span id="newBadge" class="badge bg-danger pill-rounded text-white">限量</span>
+                </li>
+
+            </ul>
+            <!-- 每日簽到 -->
+            <div class="w3-container">
+                <button onclick="document.getElementById('signUp').style.display='block'"
+                    class="w3-button w3-green  ">每日簽到</button>
+                <div id="signUp" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container">
+                            <span onclick="document.getElementById('signUp').style.display='none'"
+                                class="w3-button w3-display-topright" style="color: black;">&times;</span>
+                        </div>
+                        <div class="w3-container">
+                            <!-- 抽獎畫面 -->
+                            <div class=" dailyDraw container">
+                                <div class="row  align-items-center ">
+                                    <div class="col-5">
+                                        <img class="calender img-fluid"
+                                            src="img/pngtree-vector-calendar-icon-png-image_319694.jpg.png" alt="">
+                                    </div>
+                                    <div class="col-7">
+                                        <h2 class="font-weight-bold ">天天來簽到</h2>
+                                        <h5 class="font-weight-bold ">點抽獎 試手氣</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 "></div>
+                                    <div class="col-3 "></div>
+                                    <div class="col-6 ">
+                                        <button onclick="sign()" class=" font-weight-bold text-white drawBtn btn btn-block  
+                    " style=" background-color: #daa738;">點我抽獎</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function sign() {
+                        var frequency = 0;
+                        var fruits = Math.random() * 3;
+                        var result = Math.floor(fruits)
+                        switch (result) {
+                            case 0:
+                                alert("恭喜獲得9折折價券1張")
+                                break;
+                            case 1:
+                                alert("恭喜獲得免運卷乙張")
+                                break;
+                            default:
+                                alert("明謝惠顧")
+                                break;
+                                if (frequency < 2) {
+
+                                } else {
+
+                                }
+                        }
+                    }
+                </script>
+            </div>
+
+
+            <!-- 搜尋框 -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" size="15" aria-label="search" placeholder="請輸入關鍵字">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">search</button>
+            </form>
+            <!-- 購物車 -->
+            <div class="dropdown  btn-sm ">
+                <button id="cart" class="btn btn-dark btn-outline-light" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i id="cart" class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge badge-pill badge-danger">2</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right " aria-labelledby="cartMenu" style="min-width:380px;">
+                    <div class="px-4 py-3">
+                        <table class="table">
+                            <thead>
+                                <tr class="thead1">
+                                    <th scope="col"></th>
+                                    <th scope="col">商品名稱</th>
+                                    <th scope="col">數量</th>
+                                    <th scope="col" class="text-right">小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><a data-toggle="modal" data-target="#removeModal"
+                                            data-whatever="1939年法國老彩券" href="#"><i class="fa-solid fa-trash-can "
+                                                style="color:#267DBD;"></i></a></th>
+                                    <td>1939年法國老彩券</td>
+                                    <td>1個</td>
+                                    <td class="text-right">NT 150</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><a data-toggle="modal" data-target="#removeModal"
+                                            data-whatever="金屬燭台" href="#"><i class="fa-solid fa-trash-can "
+                                                style="color:#267DBD;"></i></a></th>
+                                    <td>金屬燭台</td>
+                                    <td>1個</td>
+                                    <td class="text-right">NT 700</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="btn btn-block btn-primary">結帳去</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 會員 -->
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item dropdown ">
+                    <a id="memberDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                            class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="memberDropdown">
+                        <li><a class="dropdown-item" href="member.html" target="_blank">會員中心</a></li>
+                        <li><a class="dropdown-item" href="#">收藏清單</a></li>
+                        <li class="dropdown-divider "></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </nav>
+
+    <!-- 茶几跳轉圖 -->
+    <div class="container-fluid" style="padding: 100px;">
+        <div class="col-lg-6 col-sm-12">
+            <img class="img-fluid w-75" id="imgs" src="img/紅茶几1.png">
+            <script>
+                setInterval(test, 1000);
+
+                var index = 0;
+                var array = new Array("img/紅茶几1.png", "img/紅茶几2.png", "img/紅茶几3.png", "img/紅茶几4.png", "img/紅茶几5.png", "img/紅茶几6.png");
+
+                function test() {
+                    var myimg = document.getElementById("imgs");
+                    if (index == array.length - 1) { index = 0; } else { index++; }
+                    myimg.src = array[index];
+                }
+            </script>
+        </div>
+        <div class=" discriptionAll col-lg-6 col-sm-12 ">
+            <div class=" text-white p-5 ">
+                <h1>19世紀末歐洲迷你茶几(共六款)</h1>
+                <div>
+                    <img id="star" src="img/5-stars.png">
+                    <span>(18則評論)</span>
+                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ipsa quo eius
+                        explicabo, error neque veritatis inventore consequatur deleniti nostrum cum sed totam pariatur
+                        commodi atque qui amet unde voluptatem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ipsa quo eius
+                        explicabo, error neque veritatis inventore consequatur deleniti nostrum cum sed totam pariatur
+                        commodi atque qui amet unde voluptatem!</p>
+                </div>
+                <div>
+                    <p class="price mb-2">NT 3500</p>
+                    <div class="qty mt-2 ">
+                        <button id="minus" class="btn btn-lg">-</button>
+                        <input id="input" type="text" value="1">
+                        <buttom id="plus" class="btn btn-lg ">+</buttom>
+                        <script>
+                            var minusButton = document.getElementById("minus");
+                            var inputnum = document.getElementById("input");
+                            var plusButton = document.getElementById("plus");
+                            minusButton.addEventListener("click", function (e) {
+                                event.preventDefault();
+                                var newValue = Number(inputnum.value) || 1; inputnum.value = newValue - 1;
+
+                            });
+
+                            plusButton.addEventListener("click", function (e) {
+                                event.preventDefault();
+                                var newValue = Number(inputnum.value) || 0; input.value = newValue + 1;
+
+                            });
+                        </script>
+                    </div>
+                    <button href="#" type="btn" class="mb-1 addToCart btn  bg-light">ADD TO CARD</button>
+                </div>
+
+                <div>
+                    <select name="style" id="styleList">
+                        <option>請選擇款式</option>
+                        <option value="款式1" disabled>款式1(售完)</option>
+                        <option value="款式2">款式2</option>
+                        <option value="款式3">款式3</option>
+                        <option value="款式4">款式4</option>
+                        <option value="款式5">款式5</option>
+                        <option value="款式6">款式6</option>
+                    </select>
+                </div>
+                <div class="mt-5">分享 :
+                    <a class="ml-2 mr-2" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                            <path
+                                d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+                            <path
+                                d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
+                        </svg></a>
+                    <a class=" mr-2" href="#"><svg id="lineIcon" xmlns="http://www.w3.org/2000/svg" width="30"
+                            height="30" fill="currentColor" class="bi bi-line" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0ZM5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.154.154 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157Zm.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156h-.562Zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832a.17.17 0 0 0-.013-.015v-.001a.139.139 0 0 0-.01-.01l-.003-.003a.092.092 0 0 0-.011-.009h-.001L7.88 4.79l-.003-.002a.029.029 0 0 0-.005-.003l-.008-.005h-.002l-.003-.002-.01-.004-.004-.002a.093.093 0 0 0-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.154.154 0 0 0 .039.038l.001.001.01.006.004.002a.066.066 0 0 0 .008.004l.007.003.005.002a.168.168 0 0 0 .01.003h.003a.155.155 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156h-.561Zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.155.155 0 0 0-.108.044h-.001l-.001.002-.002.003a.155.155 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.155.155 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z" />
+                        </svg></a>
+                    <a href="#"><svg id="fbIcon" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <!-- 頁籤 -->
+        <div class="container panel-group  ">
+            <input type="radio" name="panel-radio" id="description" class="panel-control" checked>
+            <input type="radio" name="panel-radio" id="shipping" class="panel-control">
+            <div class="tab-group">
+                <label for="description" class="active ">商品描述 Description</label>
+                <label for="shipping">運費 Shipping</label>
+            </div>
+            <div class="content-group">
+                <div class="content content1">
+                    <p>體積:40x30x43</p>
+                    <p>製造日期:1895年</p>
+                    <p>原產地:義大利</p>
+                    <p>是否經過修復:是</p>
+                </div>
+                <div class="content content2">
+                    <table id="shippingTable">
+                        <thead>
+                            <tr>
+                                <th>包裹尺寸</th>
+                                <th>本島</th>
+                                <th>離島</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <th>60公分以下</th>
+                            <td>60元</td>
+                            <td>120元</td>
+                        </tr>
+                        <tr>
+                            <th>61~90公分</th>
+                            <td>80元</td>
+                            <td>140元</td>
+                        </tr>
+                        <tr>
+                            <th>91~120公分</th>
+                            <td>100元</td>
+                            <td>160元</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- 圖片 -->
+
+        <div class="container-fluid mb-5 ">
+            <div class="row ">
+                <div class=" col-6 col-md-4">
+                    <img class="img-fluid pl-4" src="img/紅茶几1.png" alt=""><span class="style01 ">款式一</span>
+                </div>
+                <div class=" col-6 col-md-4"><img class="img-fluid pl-4" src="img/紅茶几2.png" alt=""><span
+                        class="style02 ">款式二</span></div>
+                <div class=" col-6 col-md-4"><img class="img-fluid pl-4" src="img/紅茶几3.png" alt=""><span
+                        class="style03 ">款式三</span></div>
+            </div>
+            <div class="row ">
+                <div class="col-6 col-md-4"><img class="img-fluid pl-4" src="img/紅茶几4.png" alt=""><span
+                        class="style03 ">款式四</span></div>
+                <div class="col-6 col-md-4"><img class="img-fluid pl-4" src="img/紅茶几5.png" alt=""><span
+                        class="style03 ">款式五</span></div>
+                <div class="col-6 col-md-4"><img class="img-fluid pl-4" src="img/紅茶几6.png" alt=""><span
+                        class="style03 ">款式六</span></div>
+            </div>
+            <div class="row  " style="margin: 100px 0;">
+                <div class="col-lg-6 col-sm-12">
+                    <img class="bigTablePic2 img-fluid vw-100 " src="img/茶几全圖1.jpg" alt="">
+
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <img class=" bigTablePic img-fluid  vw-60  " src="img/茶几全圖2.png" alt="">
+                    <img class="bigTablePic3 img-fluid  vw-100  " src="img/茶几全圖3˙.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="  container-fluid ">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row ">
+                    <div class="col-auto ">
+                        <div class=" font-weight-bold mt-3" style="color:rgb(239, 230, 230,0.8)"> *本店採預約制，請來電預約*
+                            <br>地址:台中市西區xx路xx號 <br>
+                            營業時間:週二-週日10:30~20:00
+                        </div>
+                        <img src="logo/logo.png" style="width: 40% ;margin-top: 20px;">
+                    </div>
+                    <div class="col-auto  ">
+                        <a class=" fa-2x mr-2" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a class=" fa-2x mr-2" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class=" fa-2x mr-2" href="#"><i class="fa-solid fa-envelope"></i></i></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class=" small   font-weight-bold" style="color: #AD7432;"> &copy; 2022 19 ANTIQUE All
+                            Right
+                            Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+</body>
+
+</html>

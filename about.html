@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <title>關於</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon/favicon1.png" sizes="32x32" type="image/jpg">
+    <link rel="stylesheet" href="CSS/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="JS/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        h1,
+        h2 {
+            color: #daa738;
+        }
+
+        #information {
+            font-size: 20px;
+        }
+
+        #sectionOne,
+        #sectionThree {
+            background-color: #efe6e6;
+        }
+
+        .section {
+            opacity: 1;
+            transition: 1s ease-in;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark py-3" ;>
+        <a class="navbar-brand" href="19_antique.html"><img id="logo" src="LOGO/logo.png"></a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link " href="about.html" target="_blank">關於
+                    </a>
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="new.html"
+                        role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">NEW IN</a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">四月英國連線Part II</a>
+                        <a class="dropdown-item" href="#">三月英國連線Part I</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">家具擺飾</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">餐廚用品</a></li>
+                <li class="specialcollect nav-item">
+                    <a class="nav-link" href="#"> 獨家收藏</a>
+                    <span id="newBadge" class="badge bg-danger pill-rounded text-white">限量</span>
+                </li>
+
+            </ul>
+            <!-- 每日簽到 -->
+            <div class="w3-container">
+                <button onclick="document.getElementById('signUp').style.display='block'"
+                    class="w3-button w3-green  ">每日簽到</button>
+                <div id="signUp" class="w3-modal">
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <div class="w3-container">
+                            <span onclick="document.getElementById('signUp').style.display='none'"
+                                class="w3-button w3-display-topright">&times;</span>
+                        </div>
+                        <div class="w3-container">
+                            <!-- 抽獎畫面 -->
+                            <div class=" dailyDraw container">
+                                <div class="row  align-items-center ">
+                                    <div class="col-5">
+                                        <img class="calender img-fluid"
+                                            src="img/pngtree-vector-calendar-icon-png-image_319694.jpg.png" alt="">
+                                    </div>
+                                    <div class="col-7">
+                                        <h2 class="font-weight-bold ">天天來簽到</h2>
+                                        <h5 class="font-weight-bold ">點抽獎 試手氣</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3 "></div>
+                                    <div class="col-3 "></div>
+                                    <div class="col-6 ">
+                                        <button onclick="sign()" class=" font-weight-bold text-white drawBtn btn btn-block  
+                        " style=" background-color: #daa738;">點我抽獎</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function sign() {
+                        var frequency = 0;
+                        var fruits = Math.random() * 3;
+                        var result = Math.floor(fruits)
+                        switch (result) {
+                            case 0:
+                                alert("恭喜獲得9折折價券1張")
+                                break;
+                            case 1:
+                                alert("恭喜獲得免運卷乙張")
+                                break;
+                            default:
+                                alert("明謝惠顧")
+                                break;
+                                if (frequency < 2) {
+
+                                } else {
+
+                                }
+                        }
+                    }
+                </script>
+            </div>
+
+
+            <!-- 搜尋框 -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" size="15" aria-label="search" placeholder="請輸入關鍵字">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">search</button>
+            </form>
+            <!-- 購物車 -->
+            <div class="dropdown  btn-sm ">
+                <button id="cart" class="btn btn-dark btn-outline-light" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i id="cart" class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge badge-pill badge-danger">2</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right " aria-labelledby="cartMenu" style="min-width:380px;">
+                    <div class="px-4 py-3">
+                        <table class="table">
+                            <thead>
+                                <tr class="thead1">
+                                    <th scope="col"></th>
+                                    <th scope="col">商品名稱</th>
+                                    <th scope="col">數量</th>
+                                    <th scope="col" class="text-right">小計</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><a data-toggle="modal" data-target="#removeModal"
+                                            data-whatever="1939年法國老彩券" href="#"><i class="fa-solid fa-trash-can "
+                                                style="color:#267DBD;"></i></a></th>
+                                    <td>1939年法國老彩券</td>
+                                    <td>1個</td>
+                                    <td class="text-right">NT 150</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><a data-toggle="modal" data-target="#removeModal"
+                                            data-whatever="金屬燭台" href="#"><i class="fa-solid fa-trash-can "
+                                                style="color:#267DBD;"></i></a></th>
+                                    <td>金屬燭台</td>
+                                    <td>1個</td>
+                                    <td class="text-right">NT 700</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="btn btn-block btn-primary">結帳去</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 會員 -->
+            <ul class="navbar-nav mr-0">
+                <li class="nav-item dropdown ">
+                    <a id="memberDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                            class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="memberDropdown">
+                        <li><a class="dropdown-item" href="member.html" target="_blank">會員中心</a></li>
+                        <li><a class="dropdown-item" href="#">收藏清單</a></li>
+                        <li class="dropdown-divider "></li>
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+    </nav>
+
+
+
+    <!-- header -->
+    <section class="py-3 section">
+        <div class="container px-5 ">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="text-center my-5 ">
+                        <h1 class="pt-5" id="first-heading">關於19 ANTIQUE</h1>
+                        <p id="information" class="text-white  ">目前位於台中的 <b>19 ANTIQUE</b>
+                            ，是一間專門從事古董銷售的零售店，主要販售來自歐美各地<u>19世紀</u>的老古董，這也是我們店名的起源，老古董們皆是從當地精挑細選所帶回，只有真沒有假，『舊』不止是過去，而是另一種未來延續，若你正找尋這些美好老物，
+                            歡迎鑑賞，可來電預約(04)1111-2222。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section one-->
+    <section id="sectionOne" class="section  hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 ">
+                    <img class=" img-fluid rounded my-5" src="./img/店面2.jpg">
+                </div>
+                <div class="col-lg-6 ">
+                    <h2 class="font-weight-bold">經營理念</h2>
+                    <p class="lead  text-dark ">貨真價實是我們的堅持，親自選品是我們對品質的把關，照顧好每樣古董是甜蜜的責任，願每位前來19
+                        ANTIQUE的客人，都能帶著心愛的古董回家，透過古董讓生活更不一樣，豈不是一件很浪漫的事?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section two-->
+    <section id="sectionTwo" class="section hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 ">
+                    <h2 class="font-weight-bold">Comming Sooning...</h2>
+                    <p id="count" class="lead  text-white ">
+                    </p>
+                    <script>
+                        var firstDate = new Date();
+                        var secondDate = new Date("2022/08/01");
+                        var date = (secondDate - firstDate) / 86400000;
+                        var result = Math.round(date)
+                        document.getElementById("count").innerHTML = "二店即將在台北市與您見面。倒數" + result + "天";
+                    </script>
+                </div>
+                <div class="col-lg-6 ">
+                    <img class=" img-fluid rounded my-5" src="./img/二店藍圖.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--section three-->
+    <section id="sectionThree" class="py-5 section  hidden">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="font-weight-bolder">我們的團隊</h2>
+            </div>
+            <div class="row row-cols-3 row-cols-sm-2 row-cols-xl-3 justify-content-center">
+                <div class="col mt-2">
+                    <div class="text-center">
+                        <div class="card bg-dark ">
+                            <img class="card-img-top img-fluid " src="img/老闆娘.png">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">老闆娘Amy</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-2">
+                    <div class="text-center">
+                        <div class="card bg-dark ">
+                            <img class="card-img-top img-fluid " src="img/老闆.png">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">老闆Jack</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mt-2">
+                    <div class="text-center">
+                        <div class="card bg-dark ">
+                            <img class="card-img-top img-fluid " src="img/古董修復師.png">
+                            <div class="card-body">
+                                <h5 class="card-title text-white">修復師Denny</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+  <footer class=" py-4 mt-auto container-fluid">
+    <div class="container px-5">
+      <div class="row align-items-center justify-content-between flex-column flex-sm-row ">
+        <div class="col-auto ">
+          <div class=" font-weight-bold " style="color:rgb(239, 230, 230,0.8)"> *本店採預約制，請來電預約* <br>地址:台中市西區xx路xx號 <br>
+            營業時間:週二-週日10:30~20:00
+          </div>
+          <img src="logo/logo.png" style="width: 40% ;margin-top: 10px;">
+        </div>
+        <div class="col-auto  ">
+          <a class=" fa-2x mr-2" href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a class=" fa-2x mr-2" href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a class=" fa-2x mr-2" href="#"><i class="fa-solid fa-envelope"></i></i></a>
+        </div>
+        <div class="container-fluid">
+          <div class=" small  mb-2 font-weight-bold" style="color: #AD7432;"> &copy; 2022 19 ANTIQUE All Right
+            Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+
+        var firstHeading = document.getElementById("first-heading");
+        console.log(firstHeading.getBoundingClientRect());
+        function isVisible(element) {
+            var elementBox = element.getBoundingClientRect();
+
+            var distanceFromTop = -200;
+
+            if (distanceFromTop > elementBox.top - window.innerHeight) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function sectionGroup() {
+            var sectionList = document.querySelectorAll(".hidden");
+            sectionList.forEach(function (section) {
+                if (isVisible(section)) {
+                    section.classList.remove("hidden");
+                };
+            });
+
+        }
+        document.addEventListener("scroll", sectionGroup);
+    </script>
+</body>
+
+</html>

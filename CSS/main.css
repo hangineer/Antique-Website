@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Hurricane&family=Lobster&family=Noto+Sans+TC&family=Noto+Serif+TC:wght@300;600&family=Roboto:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ad7432;
+  font-family: "Noto Serif TC", "Noto Sans TC", sans-serif;
+}
+
+#navbarDropdown {
+  font-family: "Roboto Serif", serif;
+}
+.englishHeader {
+  font-family: "Square Peg", cursive;
+}
+.englishBtn {
+  font-size: 22px;
+  font-family: "Roboto Serif", serif;
+}
+
+nav {
+  background-color: #511f20;
+}
+
+#logo {
+  max-width: 180px;
+  height: auto;
+}
+nav a {
+  color: #daa738;
+  font-size: 18px;
+}
+nav a:hover {
+  color: blanchedalmond;
+  position: relative;
+  top: -5px;
+}
+
+.dropdown-item:hover {
+  background-color: #ad7432;
+  color: #efe6e6;
+}
+button.navbar-toggler {
+  color: #efe6e6;
+}
+#newBadge {
+  transform: rotate(25deg);
+  border-bottom: 2px solid rgb(241, 197, 3);
+  border-right: 2px solid rgb(241, 197, 3);
+  max-width: 50px;
+  height: auto;
+  font-size: 15px;
+  position: relative;
+  top: -20px;
+  right: 12px;
+}
+.specialcollect {
+  display: flex;
+  align-items: center;
+}
+
+/* 每日簽到 */
+.dailyDraw {
+  color: #dc9f1b;
+  max-width: 350px;
+  height: 180px;
+}
+
+.calender {
+  width: 200px;
+  height: auto;
+}
+.w3-button {
+  border-radius: 20px;
+}
+.drawBtn {
+  margin: 0 0 20px 110px;
+}
+/* 搜尋框 */
+input {
+  height: 30px;
+  width: 20px;
+}
+.search:hover {
+  background-color: #efe6e6;
+}
+
+/* 購物車 */
+#cart:hover {
+  background-color: #efe6e6;
+}
+
+.cartBody:hover {
+  background-color: #b6b6b6;
+}
+
+/* 跑馬燈 */
+.marquee {
+  padding-top: 48px;
+  width: 100%;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.inner {
+  display: flex;
+  position: absolute;
+  list-style-type: none;
+  animation: marquee 20s linear infinite;
+  background-color: #ad7432;
+  font-weight: bold;
+  font-size: 19px;
+  color: #efe6e6;
+}
+.inner li {
+  margin-right: 100px;
+  margin-top: 40px;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  0% {
+    left: 100%;
+    transform: translateX(0%);
+  }
+  100% {
+    left: 0%;
+    transform: translateX(-100%);
+  }
+}
+
+/* grid layout((數字19)) */
+#Selector {
+  padding-top: 100px;
+  margin-top: 100px;
+}
+
+.grid-container {
+  margin: 20px 0;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(7, 90px);
+  grid-template-rows: 100px 100px 100pxx 100px 100px 100px;
+}
+.grid-item {
+  width: 108px;
+  height: 80px;
+  background-color: #511f20;
+}
+
+/* 商品一覽 */
+.outline {
+  transition: 0.5s;
+  opacity: 1;
+}
+.outline :hover {
+  opacity: 0.8;
+}
+.munuimg {
+  image-rendering: pixelated;
+  width: 100%;
+  height: auto;
+}
+
+/*標題 */
+h4 {
+  margin: auto;
+  color: #daa738;
+}
+
+/* 海報販售 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(7, 350px);
+  grid-template-rows: 315px;
+  list-style-type: none;
+  overflow-x: hidden;
+  padding: 13px;
+  column-gap: 10px;
+  height: 400px;
+}
+
+.imgstyle {
+  image-rendering: pixelated;
+  width: 300px;
+  height: 360px;
+}
+.active {
+  scroll-snap-type: none;
+}
+
+.gallery:hover {
+  cursor: pointer;
+}
+
+/* 新品推薦 */
+.container-fluid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.img_box {
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+}
+
+.img_box5 {
+  overflow: hidden;
+  width: 800px;
+  height: 400px;
+}
+.img {
+  width: 100%;
+  transition: all linear 1s;
+  object-fit: contain;
+}
+.img:hover {
+  transform: scale(1.2);
+}
+
+/* card */
+
+#imCard a img:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 5px rgb(45, 45, 45);
+  transition: all 0.3s linear;
+}
+.cardBtn {
+  color: #efe6e6;
+  margin-top: -10px;
+  background-color: #ad7432;
+  transition: all 0.5s linear;
+}
+.cardBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 5px rgb(45, 45, 45);
+  transition: all 0.3s linear;
+}
+.fa-heart:hover {
+  color: red;
+  transform: translateY(-3px);
+  transition: all 0.3s linear;
+}
+
+/* 常見問題 */
+#questionList {
+  width: 700px;
+  padding-bottom: 10px;
+  color: black;
+  font-size: 18px;
+}
+#questionList button {
+  color: #efe6e6;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#questionOne,
+#questionTwo,
+#questionThree,
+#questionFour,
+#questionFive {
+  background-color: #ad7432;
+  border: 1px solid white;
+}
+#answerOne,
+#answerTwo,
+#answerThree,
+#answerFour,
+#answerFive {
+  padding: 10px;
+  background-color: #efe6e6;
+}
+
+#questionList.card {
+  border: none;
+}
+
+.fa-angle-down {
+  position: absolute;
+  right: 20px;
+}
+
+/* 兔子燈 */
+.rabbit {
+  max-width: 200px;
+  height: auto;
+}
+
+.back-to-top {
+  background-color: #511f20;
+  position: absolute;
+  left: 700px;
+  border: none;
+  color: #dc9f1b;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  height: 153px;
+  background-color: #511f20;
+}
+footer a {
+  color: #ad7432;
+}
+.fa-instagram:hover {
+  color: #efe6e6;
+}
+
+.fa-envelope:hover {
+  color: #efe6e6;
+}
+
+.fa-facebook:hover {
+  color: #efe6e6;
+}
