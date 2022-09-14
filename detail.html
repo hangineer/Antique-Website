@@ -102,7 +102,6 @@
         }
 
         /* 頁籤 */
-
         .panel-control {
             opacity: 0;
         }
@@ -301,7 +300,7 @@
                 <button id="cart" class="btn btn-dark btn-outline-light" type="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <i id="cart" class="fa-solid fa-cart-shopping"></i>
-                    <span class="badge badge-pill badge-danger">2</span>
+                    <!-- <span class="badge badge-pill badge-danger">2</span> -->
                 </button>
                 <div class="dropdown-menu dropdown-menu-right " aria-labelledby="cartMenu" style="min-width:380px;">
                     <div class="px-4 py-3">
@@ -358,16 +357,46 @@
         <div class="col-lg-6 col-sm-12">
             <img class="img-fluid w-75" id="imgs" src="img/紅茶几1.png">
             <script>
-                setInterval(test, 1000);
+
 
                 var index = 0;
                 var array = new Array("img/紅茶几1.png", "img/紅茶几2.png", "img/紅茶几3.png", "img/紅茶几4.png", "img/紅茶几5.png", "img/紅茶几6.png");
-
+                // var array = ["img/紅茶几1.png", "img/紅茶几2.png", "img/紅茶几3.png", "img/紅茶几4.png", "img/紅茶几5.png", "img/紅茶几6.png"];
+                setInterval(test, 1000);
                 function test() {
-                    var myimg = document.getElementById("imgs");
-                    if (index == array.length - 1) { index = 0; } else { index++; }
-                    myimg.src = array[index];
+                    // var myImg = document.getElementById("imgs");
+                    // for (let i = 0; i < array.length; i++) {
+                    //     console.log(array[i])
+                    //     if (i == array.length - 1) {
+                    //         i = 0;
+                    //     } else {
+                    //         i++;
+                    //     }
+                    //     myImg.src = array[i];
+                    // }
+                    // var myImg = document.getElementById("imgs");
+                    // array.forEach((item, index) => {
+                    //     console.log(item);
+                    //     // console.log(index);
+                    //     if (index == array.length - 1) {
+                    //         index = 0;
+                    //     } else {
+                    //         index++;
+                    //     }
+
+                    //     myImg.src = array[index];
+                    // }
+                    // )
+
+                    var myImg = document.getElementById("imgs");
+                    if (index == array.length - 1) {
+                        index = 0;
+                    } else {
+                        index++;
+                    }
+                    myImg.src = array[index];
                 }
+
             </script>
         </div>
         <div class=" discriptionAll col-lg-6 col-sm-12 ">
@@ -387,21 +416,22 @@
                     <p class="price mb-2">NT 3500</p>
                     <div class="qty mt-2 ">
                         <button id="minus" class="btn btn-lg">-</button>
-                        <input id="input" type="text" value="1">
+                        <input id="input" type="text" value="0">
                         <buttom id="plus" class="btn btn-lg ">+</buttom>
                         <script>
                             var minusButton = document.getElementById("minus");
-                            var inputnum = document.getElementById("input");
+                            var inputNum = document.getElementById("input");
                             var plusButton = document.getElementById("plus");
                             minusButton.addEventListener("click", function (e) {
                                 event.preventDefault();
-                                var newValue = Number(inputnum.value) || 1; inputnum.value = newValue - 1;
+                                var newValue = Number(inputNum.value) || 1;
+                                inputNum.value = newValue - 1;
 
                             });
 
                             plusButton.addEventListener("click", function (e) {
                                 event.preventDefault();
-                                var newValue = Number(inputnum.value) || 0; input.value = newValue + 1;
+                                var newValue = Number(inputNum.value) || 0; input.value = newValue + 1;
 
                             });
                         </script>
@@ -442,11 +472,11 @@
             </div>
         </div>
         <!-- 頁籤 -->
-        <div class="container panel-group  ">
+        <div class="container panel-group">
             <input type="radio" name="panel-radio" id="description" class="panel-control" checked>
             <input type="radio" name="panel-radio" id="shipping" class="panel-control">
             <div class="tab-group">
-                <label for="description" class="active ">商品描述 Description</label>
+                <label for="description">商品描述 Description</label>
                 <label for="shipping">運費 Shipping</label>
             </div>
             <div class="content-group">
@@ -521,7 +551,7 @@
         <!-- Footer -->
         <footer class="  container-fluid ">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row ">
+                <div class="row d-flex align-items-center justify-content-between flex-column flex-sm-row ">
                     <div class="col-auto ">
                         <div class=" font-weight-bold mt-3" style="color:rgb(239, 230, 230,0.8)"> *本店採預約制，請來電預約*
                             <br>地址:台中市西區xx路xx號 <br>

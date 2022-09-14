@@ -138,8 +138,8 @@ input {
   margin: 20px 0;
   display: grid;
   padding: 10px;
-  grid-template-columns: repeat(7, 90px);
-  grid-template-rows: 100px 100px 100pxx 100px 100px 100px;
+  grid-template-columns: repeat(7, 70px);
+  grid-template-rows: repeat(7, 70px);
 }
 .grid-item {
   width: 108px;
@@ -286,15 +286,23 @@ h4 {
   max-width: 200px;
   height: auto;
 }
-
+/* 回到頂部 */
 .back-to-top {
+  position: fixed;
+  bottom: 5px; /* 與下方的距離, 也可改為百分比, 即為距離螢幕下方的百分比 */
+  right: 5px; /* 與右方的距離 */
+  width: 40px; /* 按鈕原始寬度 */
+  height: 40px; /* 按鈕原始高度 */
+  opacity: 0.4; /* 按鈕原始透明度 */
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.5s; /* 動畫效果 持續期間 */
   background-color: #511f20;
-  position: absolute;
-  left: 700px;
-  border: none;
+  border: none; /*或0*/
   color: #dc9f1b;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
+  z-index: 100;
 }
 
 /* Footer */
