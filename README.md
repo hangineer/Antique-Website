@@ -1,10 +1,12 @@
 # 19 Antique 中古世紀古董網站
+此專案為「靜態切版」，部分功能有使用 javascript 及 jQuery 實作 (如:每日簽到抽獎等)
 
 ![](LOGO/logo.png "logo")
 
-### 使用技術: HTML + CSS + Bootstrap + Javascript + jQuery
+## 使用技術
+HTML + CSS + Bootstrap + Javascript + jQuery
 
-### 此專案主要展現的是「靜態切版」，並使用 javascript 及 jQuery 完成網站功能(例如:每日簽到抽獎、滑鼠監聽事件操控螢幕等)，此外，網站也有加入 RWD 響應式設計。
+
 
 <br>
 
