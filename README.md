@@ -1,12 +1,12 @@
-# 19 Antique 中古世紀古董網站
+# ![](LOGO/logo.png "logo") 19 Antique 中古世紀古董網站 
+
 此專案為「靜態切版」，部分功能有使用 javascript 及 jQuery 實作 (如:每日簽到抽獎等)
 
-![](LOGO/logo.png "logo")
+## 網站連結
+https://hangineer.github.io/Antique-Website/
 
 ## 使用技術
 HTML + CSS + Bootstrap + Javascript + jQuery
-
-
 
 <br>
 
@@ -27,20 +27,14 @@ HTML + CSS + Bootstrap + Javascript + jQuery
 
 <br>
 
-## Demo (https://hangineer.github.io/Antique-Website/)
-
----
-
-<br>
-
 ## 網站截圖
 
 - 首頁
   [![image](https://i.imgur.com/DnDHhLG.png "首頁輪播圖")](https://i.imgur.com/DnDHhLG.png)
 
-[![image](https://i.imgur.com/FoUS6Bj.png "首頁商品大圖")](https://i.imgur.com/FoUS6Bj)
+   [![image](https://i.imgur.com/FoUS6Bj.png "首頁商品大圖")](https://i.imgur.com/FoUS6Bj)
 
-[![image](https://i.imgur.com/nd6ebV4.png "首頁商品大圖")](https://i.imgur.com/nd6ebV4d)
+   [![image](https://i.imgur.com/nd6ebV4.png "首頁商品大圖")](https://i.imgur.com/nd6ebV4d)
 
 <br>
 
